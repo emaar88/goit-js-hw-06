@@ -49,31 +49,31 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
   console.log(getUsersWithAge(users, 30, 40));
   // [объект Moore Hensley, объект Sharlene Bush, объект Blackburn Dotson, объект Sheree Anthony]
 
-  // //Задание 7
-  // const calculateTotalBalance = users => {
-    
-  // };
+  //Задание 7
+  const calculateTotalBalance = users => {
+    return users.reduce((acc, el) => acc + el.balance, 0);
+  };
   
-  // console.log(calculateTotalBalance(users)); // 20916
+  console.log(calculateTotalBalance(users)); // 20916
 
-  // //Задание 8
-  // const getUsersWithFriend = (users, friendName) => {
-    
-  // };
+  //Задание 8
+  const getUsersWithFriend = (users, friendName) => {
+    return users.filter(el => el.friends.includes(friendName).map(el => el.name))
+  };
   
-  // console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
-  // console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
+  console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
+  console.log(getUsersWithFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree Anthony' ]
 
-  // //Задание 9
+  //Задание 9
 
-  // const getNamesSortedByFriendsCount = users => {
-    
-  // };
+  const getNamesSortedByFriendsCount = users => {
+    return users.sort((a,b) => a.friends.length - b.friends.length).map(el => el.name)
+  };
   
-  // console.log(getNamesSortedByFriendsCount(users));
-  // // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
+  console.log(getNamesSortedByFriendsCount(users));
+  // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
-  // //Задание 10
+  //Задание 10
 
   // const getSortedUniqueSkills = users => {
     
