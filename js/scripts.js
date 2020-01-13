@@ -58,7 +58,7 @@ console.log(getUsersWithEyeColor(users, 'blue')); // [объект Moore Hensley
 
   //Задание 8
   const getUsersWithFriend = (users, friendName) => {
-    return users.filter(el => el.find(friendName))
+    return users.map(el => el.name).find(friendName)
   };
   
   console.log(getUsersWithFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
