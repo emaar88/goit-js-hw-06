@@ -10,7 +10,7 @@ console.log(getUserNames(users));
 
 //Задание 2
 const getUsersWithEyeColor = (users, color) => {
-  return users.filter(el => el.eyeColor === color);
+  return users.filter(obj => obj.eyeColor === color);
 };
 
 console.log(getUsersWithEyeColor(users, "blue")); // [объект Moore Hensley, объект Sharlene Bush, объект Carey Barr]
@@ -24,14 +24,14 @@ console.log(getUsersWithGender(users, "male")); // [ 'Moore Hensley', 'Ross Vazq
 
 //Задание 4
 const getInactiveUsers = users => {
-  return users.filter(el => el.isActive === false);
+  return users.filter(obj => obj.isActive === false);
 };
 
 console.log(getInactiveUsers(users)); // [объект Moore Hensley, объект Ross Vazquez, объект Blackburn Dotson]
 
 //Задание 5
 const getUserWithEmail = (users, email) => {
-  return users.filter(el => el.email === email);
+  return users.filter(obj => obj.email === email);
 };
 
 console.log(getUserWithEmail(users, "shereeanthony@kog.com")); // {объект пользователя Sheree Anthony}
@@ -39,7 +39,7 @@ console.log(getUserWithEmail(users, "elmahead@omatom.com")); // {объект п
 
 //Задание 6
 const getUsersWithAge = (users, min, max) => {
-  return users.filter(el => el.age > min && el.age < max);
+  return users.filter(obj => obj.age > min && el.age < max);
 };
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
