@@ -75,19 +75,16 @@ console.log(getNamesSortedByFriendsCount(users));
 
 // Задание 10
 
-const getSortedUniqueSkills = users => {
-  return users
-    .reduce(
-      (acc, el) =>
-        acc.forEach(skill => {
-          if (!acc.includes(skill)) {
-            acc.push(skill);
-          }
-        }),
-      []
-    )
+const getSortedUniqueSkills = users =>
+  users
+    .reduce((accum, el) => {
+      el.skills.forEach(skill => {
+        if (!accum.includes(skill)) {
+          accum.push(skill);
+        }
+      });
+      return accum;
+    }, [])
     .sort();
-};
-
 console.log(getSortedUniqueSkills(users));
 // // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
