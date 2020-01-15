@@ -76,16 +76,10 @@ console.log(getNamesSortedByFriendsCount(users));
 
 // Задание 10
 const newArr = [...users];
-const reduceSkills = newArr => newArr.reduce((accum, el) => {
-  el.skills.filter(skill => {
-    !accum.includes(skill)
-  });
-  return accum;
-}, [])
- const getSortedUniqueSkills = newArr =>
- {
-  return reduceSkills(newArr).sort();
- }
+const getSortedUniqueSkills = newArr => {
+  newArr.skills.filter(skill)
+  return newArr.sort();
+  };
 
 
 console.log(getSortedUniqueSkills(users));
