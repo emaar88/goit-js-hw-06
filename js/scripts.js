@@ -78,9 +78,7 @@ console.log(getNamesSortedByFriendsCount(users));
 const newArr = [...users];
 const reduceSkills = newArr => newArr.reduce((accum, el) => {
   el.skills.filter(skill => {
-    if (!accum.includes(skill)) {
-      accum.push(skill);
-    }
+    accum.includes(skill)
   });
   return accum;
 }, [])
