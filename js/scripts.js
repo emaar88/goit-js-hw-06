@@ -39,7 +39,7 @@ console.log(getUserWithEmail(users, "elmahead@omatom.com")); // {объект п
 
 //Задание 6
 const getUsersWithAge = (users, min, max) => {
-  return users.filter(obj => obj.age > min && el.age < max);
+  return users.filter(obj => obj.age > min && obj.age < max);
 };
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
@@ -65,7 +65,8 @@ console.log(getUsersWithFriend(users, "Goldie Gentry")); // [ 'Elma Head', 'Sher
 //Задание 9
 
 const getNamesSortedByFriendsCount = users => {
-  return users
+  const newArr = [...users];
+  return newArr
     .sort((a, b) => a.friends.length - b.friends.length)
     .map(el => el.name);
 };
@@ -74,17 +75,20 @@ console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
 // Задание 10
+const newArr = [...users];
+const reduceSkills = newArr => newArr.reduce((accum, el) => {
+  el.skills.forEach(skill => {
+    if (!accum.includes(skill)) {
+      accum.push(skill);
+    }
+  });
+  return accum;
+}, [])
+ const getSortedUniqueSkills = newArr =>
+ {
+  return reduceSkills(newArr).sort();
+ }
 
-const getSortedUniqueSkills = users =>
-  users
-    .reduce((accum, el) => {
-      el.skills.forEach(skill => {
-        if (!accum.includes(skill)) {
-          accum.push(skill);
-        }
-      });
-      return accum;
-    }, [])
-    .sort();
+
 console.log(getSortedUniqueSkills(users));
-// // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+// [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
