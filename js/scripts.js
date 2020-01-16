@@ -31,7 +31,7 @@ console.log(getInactiveUsers(users)); // [объект Moore Hensley, объек
 
 //Задание 5
 const getUserWithEmail = (users, email) => {
-  return users.find(UserWithEmail => UserWithEmail.email === email);
+  return users.find(userWithEmail => userWithEmail.email === email);
 };
 
 console.log(getUserWithEmail(users, "shereeanthony@kog.com")); // {объект пользователя Sheree Anthony}
@@ -94,7 +94,7 @@ console.log(getNamesSortedByFriendsCount(users));
 //   return reduceSkills(summSkills).sort();
 // };
 
-// второй вариант решения - добавление всехскиллов а потом удаление повторов
+// второй вариант решения - добавление всех скиллов а потом удаление повторов
 const newArr = [...users];
 const reduceSkills = newArr => newArr.reduce((accum, el) => {
     accum.push(...el.skills);
