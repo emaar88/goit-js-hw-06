@@ -76,20 +76,35 @@ const getNamesSortedByFriendsCount = users => {
 console.log(getNamesSortedByFriendsCount(users));
 // [ 'Moore Hensley', 'Sharlene Bush', 'Elma Head', 'Carey Barr', 'Blackburn Dotson', 'Sheree Anthony', 'Ross Vazquez' ]
 
+
+
 // Задание 10
-const summSkills = [...users];
-const reduceSkills = summSkills =>
-  summSkills.reduce((accum, el) => {
-    el.skills.filter(skill => {
-      if (!accum.includes(skill)) {
-        accum.push(skill);
-      }
-    });
+// один вариант решения, добавление только тех скиллов что прошли проверку
+// const summSkills = [...users];
+// const reduceSkills = summSkills =>
+//   summSkills.reduce((accum, el) => {
+//     el.skills.filter(skill => {
+//       if (!accum.includes(skill)) {
+//         accum.push(skill);
+//       }
+//     });
+//     return accum;
+//   }, []);
+// const getSortedUniqueSkills = summSkills => {
+//   return reduceSkills(summSkills).sort();
+// };
+
+// второй вариант решения - добавление всехскиллов а потом удаление повторов
+const newArr = [...users];
+const reduceSkills = newArr => newArr.reduce((accum, el) => {
+    accum.push(...el.skills);
     return accum;
-  }, []);
-const getSortedUniqueSkills = summSkills => {
-  return reduceSkills(summSkills).sort();
-};
+    }, [])
+ const getSortedUniqueSkills = newArr =>
+ {
+  const UniqueSkills = reduceSkills(newArr).filter((skill,index) =>  index === reduceSkills(newArr).indexOf(skill)) 
+return UniqueSkills.sort();
+ }
 
 console.log(getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
