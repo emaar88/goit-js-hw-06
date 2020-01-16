@@ -39,7 +39,7 @@ console.log(getUserWithEmail(users, "elmahead@omatom.com")); // {объект п
 
 //Задание 6
 const getUsersWithAge = (users, min, max) => {
-  return users.filter(period => period.age > min && obj.age < max);
+  return users.filter(period => period.age > min && period.age < max);
 };
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
